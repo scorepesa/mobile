@@ -1,0 +1,19 @@
+{
+  "name": "wekelea",
+  "description": "Wekelea - Betting",
+  "type": "project",
+  "require": {
+    "voku/html-min": "~1.0.9",
+    "firebase/php-jwt": "^5.0",
+    "vlucas/phpdotenv": "^2.4",
+    "symfony/intl": "^3.4"
+  },
+  "license": "Apache",
+  "authors": [
+    {
+      "name": "Reuben Wafula",
+      "email": "rubewafula@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable"
+}
