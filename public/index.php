@@ -36,9 +36,9 @@ try {
     $application->setDI($di);
     echo $application->handle()->getContent();
 } catch (Exception $e) {
-//echo $e->getMessage() . '<br>';
-      //echo '<pre>' . $e->getTraceAsString() . '</pre>';
-    echo "<head><title>Page Not Found - wekeleabet.com</title></head><body style='background-color: #030928;background:url(img/error-cover.jpg)'><link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'><div style='
+	echo $e->getMessage() . '<br>';
+    echo '<pre>' . $e->getTraceAsString() . '</pre>';
+    echo "<head><title>Page Not Found - scorepesa.co.ke</title></head><body style='background-color: #030928;background:url(img/error-cover.jpg)'><link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'><div style='
     max-width: 600px;
     display: block;
     margin: 100px auto;
@@ -47,12 +47,12 @@ try {
     font-size: 20px;
     font-family: Montserrat, sans-serif;
 '>
-<a href='https://wekeleabet.com'><img style='max-width: 180px;' src='images/logo.png' /></a>
+<a href='https://scorepesa.co.ke'><img style='max-width: 180px;' src='images/logo.jpg' /></a>
 <p><b style='font-size: 50px;
     line-height: 60px;
     display: block;'>Error</b> <br/>Something is not adding up. Could not trace this request.<br/> CLick below to go back home
 </p>
-    <a href='http://wekeleabet.com' class='error-404' style='background: #6e2f44; color: #ffffff; border-radius: 10px; padding:5px 15px;'>Home</a>
+    <a href='http://scorepesa.co.ke' class='error-404' style='background: #6e2f44; color: #ffffff; border-radius: 10px; padding:5px 15px;'>Home</a>
 </div>
 
 </body>";
