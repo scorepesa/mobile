@@ -9,10 +9,10 @@ $baseUri = '/';
 
     $connection = array(
         'adapter'     => 'Mysql',
-        'host'        => 'pr-db-1',
-        'username'    => 'web-q',
-        'password'    => 's+M4@N#rHEwZBBb@!wRe',
-        'dbname'      => 'wekelea',
+        'host' => '127.0.0.1',
+		'username' => 'root',
+		'password' => 'root',
+		'dbname' => 'scorepesa',
         'charset'     => 'utf8',
         'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
     );

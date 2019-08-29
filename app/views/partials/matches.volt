@@ -3,11 +3,13 @@
   <tr>
     <td>
       <table class="top">
-        <tr class="top--image">
+        
+		<!--<tr class="top--image">
           <td>
             <a href="./jackpot"><img src="./images/slide3.jpg" width="100%" alt=""></a>
           </td>
         </tr>
+		-->
         <tr>
           <td>
             {{ partial("partials/hometabs") }}

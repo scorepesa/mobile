@@ -6,7 +6,7 @@
           <td>
             <table>
               <tr>
-                  <td class="logo"><a href="{{ url('') }}"> <img src="{{ url('/images/logo.png') }}" alt="logo"></a></td>
+                  <td class="logo"><a href="{{ url('') }}"> <img src="{{ url('images/logo.jpg') }}" alt="logo"></a></td>
                   <td class="betslip"><a href="{{ url('betslip') }}"><?php echo $t->_('betslip'); ?><span class="betslip--count slip-counter"><?= $slipCount ?></span></a></td>
               </tr>
             </table>
