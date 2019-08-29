@@ -269,7 +269,7 @@ img.side-icon{
   width: 100%;
   border: none;
   height: 30px;
-  background-color: #24367E;
+  background-color: #009B40;
   color: white;
 }
 
@@ -279,6 +279,7 @@ img.side-icon{
   text-align: center;
   border-collapse: collapse;
   margin: 1px 0;
+  background: #0f0f0f;
 }
 
 #main .highlights--item {
@@ -286,8 +287,8 @@ img.side-icon{
     border-collapse: collapse;
     margin-bottom: 5px;
     margin: 5px 0;
-    border-bottom: 10px solid #131E28;
-    background-color: #18242F !important;
+    border-bottom: 10px solid #333;
+    background-color: #0F0F0F !important;
 }
 
 #main  .highlights--item .selected {
@@ -362,10 +363,9 @@ img.side-icon{
 .sidebets {padding: 0 3px;}
 
 #main .highlights--item .odds {
-    background-color: #334C5C !important;
-    color: #24367E;
-    font-size: 12px;
-    border: 1px solid #435C6C;
+    background-color: #009B40 !important;
+    color: #FFF;
+    font-size: 11px;
 }
 
 #main .highlights--item .odds table {

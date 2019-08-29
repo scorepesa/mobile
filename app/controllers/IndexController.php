@@ -62,7 +62,7 @@ class IndexController extends ControllerBase
                 'men'        => $men,
             ]);
 
-            $this->tag->setTitle('Wekeleabet - Leading sports Betting site In Kenya');
+            $this->tag->setTitle('ScorePesa - Leading sports Betting site In Kenya');
         }
     }
 

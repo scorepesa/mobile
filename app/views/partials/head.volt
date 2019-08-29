@@ -12,11 +12,11 @@
 
     <style type="text/css">
         .brand, .brand .betslip {
-            background-color: #020B14 !important;
+            background-color: #FFF !important;
         }
 
         .betslip a {
-            color: white !important;
+            color: #101721 !important;
         }
 
         .betslip .betslip--count {
