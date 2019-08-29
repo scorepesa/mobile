@@ -27,7 +27,7 @@ class CorrectController extends ControllerBase
             }
         }
 
-        $this->tag->setTitle('Jackpot - wekeleabet.com');
+        $this->tag->setTitle('Jackpot - scorepesa.co.ke');
 
         $this->view->setVars([
             "games"      => $games,

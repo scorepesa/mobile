@@ -15,7 +15,7 @@ class ControllerBase extends Controller
     /**
      *
      */
-    const BASE_URI = "http://35.198.157.196:8787";
+    const BASE_URI = "http://35.187.20.191:8787";
 
 
     /**
@@ -173,7 +173,7 @@ class ControllerBase extends Controller
     protected function generateToken($data, $exp)
     {
         $token = [
-            "iss"  => "http://wekeleabet.com",
+            "iss"  => "http://scorepesa.co.ke",
             "iat"  => 1356999524,
             "nbf"  => 1357000000,
             "exp"  => $exp,

@@ -50,7 +50,7 @@ class SignupController extends ControllerBase
                 $this->view->disable();
             }else{
 
-            $sms = "Your WEKELEABET account verification code is $verification_code. Enter this to activate your account.";
+            $sms = "Your SCOREPESA account verification code is $verification_code. Enter this to activate your account.";
 
             $sms = str_replace(' ', '+', $sms);
 

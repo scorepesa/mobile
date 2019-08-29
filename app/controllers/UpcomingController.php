@@ -45,7 +45,7 @@ class UpcomingController extends ControllerBase
             'page'       => $page,
         ]);
 
-        $this->tag->setTitle('Wekeleabet - The leading sports Betting Website In Kenya');
+        $this->tag->setTitle('ScorePesa - The leading sports Betting Website In Kenya');
 
         $this->view->pick('index/index');
     }

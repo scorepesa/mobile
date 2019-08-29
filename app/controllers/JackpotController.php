@@ -35,7 +35,7 @@ class JackpotController extends ControllerBase
 
         $slipCountJ = sizeof($theBetslip);
 
-    	$this->tag->setTitle('Weekly Jackpot - wekeleabet.com');
+    	$this->tag->setTitle('Weekly Jackpot - scorepesa.co.ke');
 
         $this->view->setVars(["games"=>$games,'slipCountJ'=>$slipCountJ,'theBetslip'=>$theBetslip,'men'=>'jackpot','startTime'=>$startTime,'jackpotID'=>$jackpotID, 'jpactive' => $jpStatus == 'ACTIVE' ]);
 

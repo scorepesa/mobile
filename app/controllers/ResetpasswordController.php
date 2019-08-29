@@ -44,7 +44,7 @@ class ResetpasswordController extends ControllerBase
                     // Disable the view to avoid rendering
                     $this->view->disable();
                 }else{
-                    $sms = "Your WEKELEABET password reset code is $verification_code. Use this to reset your password.";
+                    $sms = "Your SCOREPESA password reset code is $verification_code. Use this to reset your password.";
                     $sms = str_replace(' ', '+', $sms);
                     $sms = "msisdn=$mobile&message=$sms&short_code=29777&correlator=&message_type=BULK&link_id=";
         
