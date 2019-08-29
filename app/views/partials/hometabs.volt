@@ -21,7 +21,7 @@
         <span class="sport-on-match-list"> 
             <img class="side-icon" src="/sport/Soccer.png">  
         </span> 
-        <span class="sport-on-match-list-desc"> SOCCER Wekelea Today's Special
+        <span class="sport-on-match-list-desc"> SOCCER ScorePesa Today's Special
         </span> 
         
                         

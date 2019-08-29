@@ -10,7 +10,7 @@
     <td><b>Bonus:</b> Ksh. {{user['bonus_balance']}}</td>
   </tr>
  <!--  <tr>
-    <td><b>Wekeleabet points:</b> {{user['points']}}</td>
+    <td><b>ScorePesa points:</b> {{user['points']}}</td>
   </tr> -->
   
   </table>
