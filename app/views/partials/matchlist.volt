@@ -63,7 +63,6 @@
                   ?>">
                   <table cellspacing="0" cellpadding="0">
                     <tr>
-
                       <td class=""><button href="javascript:;" class="" hometeam="<?php echo $day['home_team']; ?>" oddtype="3 Way" bettype='prematch' awayteam="<?php echo $day['away_team']; ?>" oddvalue="<?php echo $day['home_odd']; ?>" target="." odd-key="<?php echo $day['home_team']; ?>" parentmatchid="<?php echo $day['parent_match_id']; ?>" id="<?php echo $day['match_id']; ?>" custom="<?php echo clean($day['match_id'].$day['sub_type_id'].$day['home_team']); ?>" sub-type-id="1" special-value-value="0" onClick="addBet(this.id,this.getAttribute('sub-type-id'),this.getAttribute('odd-key'),this.getAttribute('custom'),this.getAttribute('special-value-value'),this.getAttribute('bettype'),this.getAttribute('hometeam'),this.getAttribute('awayteam'),this.getAttribute('oddvalue'),this.getAttribute('oddtype'),this.getAttribute('parentmatchid'))">
                         <span class="pick"><?= $day['home_team'] ?>
                       </span>

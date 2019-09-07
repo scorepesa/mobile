@@ -58,8 +58,8 @@ class ResetpasswordController extends ControllerBase
                         $send = $this->sendSMS($sms);
                         $this->flashSession->error($this->flashSuccess('Use the code sent to your phone to reset your password'));
                         $this->response->redirect("resetpassword?id=$profile_id");
-                    // Disable the view to avoid rendering
-                    $this->view->disable();
+                        // Disable the view to avoid rendering
+                        $this->view->disable();
                     }else {
                         $insert = $this->rawInsert("insert into profile_settings (profile_id,password,verification_code,created_at) values('$profile_id','','$verification_code',now())");
 

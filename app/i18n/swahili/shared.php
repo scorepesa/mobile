@@ -17,7 +17,7 @@ $messages = [
     "confirm_password"            => "Confirm Password",
     "accept"                      => "Accept terms and conditions",
     "policy"                      => "Terms and condtions",
-    "licence"                     => "BCLB (Betting Control and Licensing Board of Kenya) NO. 0000000",
+    "licence"                     => "BCLB (Betting Control and Licensing Board of Kenya) NO. 0000102",
     "age_agreement"               => "I am over 18 years of age",
     "Submit"                      => "Submit",
     "description"                 => "Leading sport betting site in Kenya",
@@ -37,7 +37,7 @@ $messages = [
     "Remember me"                 => "Remember me",
     "Forgot Password"             => "Forgot Password",
     "highlights"                  => "Today's Special",
-    "upcoming"                    => "Upcomng Games",
+    "upcoming"                    => "Upcoming Games",
     "Team, Competition or GameID" => "Team, Competition or GameID",
     "search"                      => "Search",
     "game_id"                     => "Game ID",
@@ -47,7 +47,7 @@ $messages = [
     "M-pesa Paybill"              => "M-pesa Paybill",
     "paybill"                     => "290080",
     "Account"                     => "Account",
-    "contacts-list"               => "<a href='tel:0729297770'>0729297770</a>,<a href='tel:0704297770'>0704297770</a>",
+    "contacts-list"               => "<a href='tel:0101 290080'>0101 290080</a>",
     "Verify Mobile Number"        => "Verify Mobile Number",
     "enter-mobile"                => "Enter your mobile number and verification code below",
     "enter-mobile-label"          => "Enter Mobile Number",
@@ -55,5 +55,4 @@ $messages = [
     "Verify"                      => "Verify",
     "other_sports"                => "Other Sports",
     "tomorrow"                    => "Tomorrow",
-
 ];

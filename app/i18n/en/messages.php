@@ -47,7 +47,7 @@ $messages = [
     "M-pesa Paybill"              => "M-pesa Paybill",
     "paybill"                     => "290080",
     "Account"                     => "Account",
-    "contacts-list"               => "<a href='tel:0729297770'>0729297770</a>,<a href='tel:0704297770'>0704297770</a>",
+    "contacts-list"               => "<a href='tel:+254 101 290080'>+254 101 290080</a>",
     "Verify Mobile Number"        => "Verify Mobile Number",
     "enter-mobile"                => "Enter your mobile number and verification code below",
     "enter-mobile-label"          => "Enter Mobile Number",
@@ -55,5 +55,4 @@ $messages = [
     "Verify"                      => "Verify",
     "other_sports"                => "Other Sports",
     "tomorrow"                    => "Tomorrow",
-
 ];

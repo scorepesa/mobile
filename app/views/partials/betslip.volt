@@ -93,12 +93,20 @@
                   <td class="left" colspan="3">
                     <table width="100%">
                       <tr>
-                        <td class="dark-gray">Odds</td>
+                        <td class="dark-gray">Total Odds</td>
                         <td class="text-right bold"><?= $totalOdds; ?></td>
                       </tr>
                       <tr>
-                        <td class="dark-gray">Win</td>
+                        <td class="dark-gray">Possible Win</td>
                         <td class="text-right bold"><?= round($totalOdds*$stake); ?></td>
+                      </tr>
+                      <tr>
+                        <td class="dark-gray">Withholding Tax (20%)</td>
+                        <td class="text-right bold"><?= round($totalOdds*$stake*0.2); ?></td>
+                      </tr>
+                      <tr>
+                        <td class="dark-gray">Net Possible Win</td>
+                        <td class="text-right bold"><?= round($totalOdds*$stake -($totalOdds*$stake*0.2)); ?></td>
                       </tr>
                     </table>
                   </td>
