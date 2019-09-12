@@ -21,16 +21,8 @@ class TomorrowController extends ControllerBase
 
         $keyword = $this->request->getPost('keyword');
 
-//        $today=$this->rawSelect("select * from ux_todays_highlights where date(start_time) = date(now() + INTERVAL 1 DAY) order by m_priority desc, priority desc limit $skip,$limit");
-//        $total = $this->rawSelect("select count(*) as total from ux_todays_highlights where date(start_time) = date(now() + INTERVAL 1 DAY) order by m_priority desc, priority desc limit 1");
-//
-//        if ($keyword) {
-//            $today=$this->rawSelect("select * from ux_todays_highlights where date(start_time) = date(now() + INTERVAL 1 DAY) and game_id like '%$keyword%' or home_team like '%$keyword%' or away_team like '%$keyword%' order by m_priority desc, priority desc limit $skip,$limit");
-//            $total=$this->rawSelect("select count(*) as total from ux_todays_highlights where date(start_time) = date(now() + INTERVAL 1 DAY) and game_id like '%$keyword%' or home_team like '%$keyword%' or away_team like '%$keyword%' order by m_priority desc, priority desc limit 1");
-//        }
+	list($today, $total, $sCompetitions) = $this->getGames($keyword, $skip, $limit, ' and date(start_time) = curdate() + INTERVAL 1 DAY ', 'm_priority desc, priority desc, start_time asc');
 
-        list($today, $total, $sCompetitions) = $this->getGames($keyword, $skip, $limit, '', 'm_priority desc, priority desc');
-        
         $total = $total['0']['total'];
 
         $pages = ceil($total/$limit)-1;

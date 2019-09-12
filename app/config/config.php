@@ -9,11 +9,11 @@ $baseUri = '/';
 
     $connection = array(
         'adapter'     => 'Mysql',
-        'host' => '127.0.0.1',
-		'username' => 'root',
-		'password' => 'root',
-		'dbname' => 'scorepesa',
-        'charset'     => 'utf8',
+        'host' => '35.241.140.160',
+    	'username' => 'web',
+    	'password' => 'sc0r3p3s@w3bN1nj@',
+    	'dbname' => 'scorepesa', 
+	'charset'     => 'utf8',
         'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
     );
     $baseUri = '/mobile/';
