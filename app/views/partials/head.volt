@@ -5,7 +5,7 @@
     <meta name="keywords" content="<?php echo $t->_('keywords'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:site_name" content="<?php echo $t->_('app_name'); ?>"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/favicon.ico') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('img/favicon.png') }}">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     {{ get_title() }}
     {{ stylesheet_link('css/lite.css') }}
