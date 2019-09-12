@@ -8,13 +8,13 @@ class BetslipController extends ControllerBase
 {
     public function IndexAction()
     {
-        $stake = $this->session->get('stake') ?: 30;
+        $stake = $this->session->get('stake') ?: 50;
         $this->view->setVars(['stake' => $stake]);
     }
 
     public function stakeAction()
     {
-        $stake = $this->request->get('stake') ?: 30;
+        $stake = $this->request->get('stake') ?: 50;
 
         if ($stake < 30) {
             $stake = 30;
