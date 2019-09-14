@@ -22,7 +22,7 @@ class UpcomingController extends ControllerBase
 
         $keyword = $this->request->getPost('keyword');
 
-        list($today, $total, $sCompetitions) = $this->getGames($keyword, $skip, $limit, '', 'm_priority desc, priority desc');
+        list($today, $total, $sCompetitions) = $this->getGames($keyword, $skip, $limit, ' and date(start_time) = curdate() ', 'm_priority desc, priority desc');
 
         $total = $total['0']['total'];
 
