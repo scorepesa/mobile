@@ -21,7 +21,7 @@ class TomorrowController extends ControllerBase
 
         $keyword = $this->request->getPost('keyword');
 
-	list($today, $total, $sCompetitions) = $this->getGames($keyword, $skip, $limit, ' and date(start_time) = curdate() + INTERVAL 1 DAY ', 'm_priority desc, priority desc, start_time asc');
+	    list($today, $total, $sCompetitions) = $this->getGames($keyword, $skip, $limit, ' and date(start_time) = curdate() + INTERVAL 1 DAY ', 'm_priority desc, priority desc, start_time asc');
 
         $total = $total['0']['total'];
 

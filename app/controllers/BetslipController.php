@@ -157,16 +157,16 @@ class BetslipController extends ControllerBase
             $this->view->disable();
         } else {
 
-            if ($bet_amount < 30) {
+            if ($bet_amount < 50) {
                 if ($src == 'mobile') {
-                    $this->flashSession->error($this->flashMessages('Bet amount should be atleast KES. 30'));
+                    $this->flashSession->error($this->flashMessages('Bet amount should be at least KES. 50'));
                     $this->response->redirect('betmobile');
                     // Disable the view to avoid rendering
                     $this->view->disable();
                 } else {
                     $data = [
                         "status_code" => 421,
-                        "message"=> "Bet amount should be atleast KES. 30",
+                        "message"=> "Bet amount should be at least KES. 50",
                     ];
                     $response->setContent(json_encode($data));
 
