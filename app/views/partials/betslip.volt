@@ -43,7 +43,6 @@
                   <table>
                     <tr class="game">
                       <td>
-
                       <?php
                       if($bet['away_team']=='na'){
                         echo $bet['home_team']; 
