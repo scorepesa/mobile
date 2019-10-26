@@ -163,25 +163,25 @@
 <li><strong>BETTING PROCEDURES </strong></li>
 </ol>
 <p><strong>Anyone above 18years of age</strong> can play as many times as they desire but within the daily limits on bet values and payouts set aside in our Terms and Conditions&nbsp;</p>
-<p><strong>Registration: </strong>Simply SMS &ldquo;ScorePesa&rdquo; to <strong>29505</strong>. You will receive a confirmation message from 29505 confirming that you are now registered and ready to bet.</p>
+<p><strong>Registration: </strong>Simply SMS &ldquo;ScorePesa&rdquo; to <strong>29008</strong>. You will receive a confirmation message from 29008 confirming that you are now registered and ready to bet.</p>
 <p><strong>ScorePesa Account Top-up: </strong>To top up your ScorePesa Account, go to the Mpesa Menu, Lipa na Mpesa, go to pay bill number enter business number 290080, account no. ScorePesa and enter the amount you wish to deposit. You can also deposit online at www.scorepesa.co.ke. Once you&rsquo;ve logged in, click on &lsquo;Deposit&rsquo;, enter amount and then click on &lsquo;Top Up Now&rsquo;.</p>
-<p><strong>Balance: </strong>To check your balance, SMS the word BALANCE to 29505. To check your bonus balance, SMS the word BONUS to 29505.</p>
+<p><strong>Balance: </strong>To check your balance, SMS the word BALANCE to 29008. To check your bonus balance, SMS the word BONUS to 29008.</p>
 <p><strong>Placing Bets: </strong></p>
 <p>The minimum bet amount is Ksh 50 and the maximum limit is set in the terms and conditions.</p>
 <p>There are three possible results in any football match:</p>
 <p>1 - Home Team wins</p>
 <p>X - Draw result</p>
 <p>2 - Away Team wins</p>
-<p>To bet on your team, SMS ScorePesa to 29505 and you will receive current football match fixtures and their ODDS. To receive more games simply SMS ScorePesa to 29505. The more you SMS the more games you receive.</p>
+<p>To bet on your team, SMS ScorePesa to 29008 and you will receive current football match fixtures and their ODDS. To receive more games simply SMS ScorePesa to 29008. The more you SMS the more games you receive.</p>
 <p>You can also visit the ScorePesa website www.scorepesa.co.ke and identify the game you wish to bet on.</p>
 <p><strong>Types of bets: </strong></p>
 <p><strong>Single Bet: </strong>Place bet in this format; GAMEID#PICK#AMOUNT</p>
 <p>e.g. GAMEID 123 Arsenal vs Liverpool ODDS (1=2.54 X=3.47 2=3.10)</p>
-<p>to bet on this match, SMS 123#1#200 to 29505</p>
+<p>to bet on this match, SMS 123#1#200 to 29008</p>
 <p><strong>Multi Bet: </strong>Place bet in this format; GAMEID#PICK#GAMEID#PICK#AMOUNT</p>
 <p>e.g. GAMEID 123 Arsenal vs Liverpool ODDS (1=2.54 X=3.47 2=3.10)</p>
 <p>GAMEID 456 Manchester United vs Chelsea ODDS (1=2.87 X=4.13 2=3.90)</p>
-<p>to bet on this match, SMS 123#1#456#X#200 to 29505</p>
+<p>to bet on this match, SMS 123#1#456#X#200 to 29008</p>
 <p><strong>Double Chance (DC): </strong>Possible outcomes &ndash; 12, 1X, X2 Pick Format: DC12 DC1X DCX2</p>
 <p>GAMEID 123 Arsenal vs Liverpool ODDS (1=2.54 X=3.47 2=3.10)</p>
 <p>Single Bet - Place bet in this format: GAMEID#PICK#AMOUNT</p>
@@ -254,7 +254,7 @@
 <p>Withdrawal limits are as set in the terms and conditions.</p>
 
 <p><strong>Winners&rsquo; Notification: </strong>Winners will receive an SMS notification of their winnings and have it deposited in their ScorePesa account a few minutes after the game ends. The extra minutes allows us to validate the results and post them on our website www.scorepesa.co.ke</p>
-<p><strong>Withdraw: </strong>To withdraw, send WITHDRAW#AMOUNT to 29505. You can also withdraw on www.scorepesa.co.ke. Once you are logged in, click on withdraw, enter amount and click on &lsquo;withdraw now&rsquo;. Minimum withdrawal amount is Kshs. 50. Kindly note you are not able to withdraw your bonus. Withdrawal charges are as follows:</p>
+<p><strong>Withdraw: </strong>To withdraw, send WITHDRAW#AMOUNT to 29008. You can also withdraw on www.scorepesa.co.ke. Once you are logged in, click on withdraw, enter amount and click on &lsquo;withdraw now&rsquo;. Minimum withdrawal amount is Kshs. 50. Kindly note you are not able to withdraw your bonus. Withdrawal charges are as follows:</p>
 <p>50 &ndash; 1,000 (15) 1,001 &ndash; 2,500 (25) 2,501 &ndash; 70,000 (33)</p>
 <ol start="25">
 <li><strong>BONUS</strong></li>
@@ -262,7 +262,7 @@
 <p>ScorePesa bonus scheme is currently available for the following users:</p>
 <ol>
 <li>Top Up Bonus. Top up over Kshs. 200 and get Kshs. 50 bet bonus.</li>
-<li>Referral bonus of Kshs. 50 will be given to users who refer their friends to ScorePesa by sending ACCEPT#FRIEND&rsquo;S NUMBER to 29505. Those referred are required to fund their accounts within 48hrs to enable the referrer earn their bonus.</li>
+<li>Referral bonus of Kshs. 50 will be given to users who refer their friends to ScorePesa by sending ACCEPT#FRIEND&rsquo;S NUMBER to 29008. Those referred are required to fund their accounts within 48hrs to enable the referrer earn their bonus.</li>
 <li>Apart from Jackpot Bonus, any other bonus awarded cannot be withdrawn. However, bonus winnings derived from the bets placed successfully with the bonus can be withdrawn.</li>
 <li>When a customer earns bonus from their deposits or topping up their ScorePesa account, they have to bet with their deposited amount to enjoy their bonus. If they want to withdraw their deposited cash without betting, they can withdraw their money and forfeit the bonus amount earned by that money.&nbsp;</li>
 </ol>
@@ -292,6 +292,6 @@
 <ol start="28">
 <li><strong>PROMOTIONAL SMS</strong>&nbsp;</li>
 </ol>
-ScorePesa sms’ are meant for transactional purposes whereby they come automated as a response. But for any promotional sms’ to opt out sms STOP to 29505
+ScorePesa sms’ are meant for transactional purposes whereby they come automated as a response. But for any promotional sms’ to opt out sms STOP to 29008
             
         </div>
