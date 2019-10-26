@@ -46,7 +46,7 @@ class ResetpasswordController extends ControllerBase
                 }else{
                     $sms = "Your SCOREPESA password reset code is $verification_code. Use this to reset your password.";
                     $sms = str_replace(' ', '+', $sms);
-                    $sms = "msisdn=$mobile&message=$sms&short_code=29777&correlator=&message_type=BULK&link_id=";
+                    $sms = "msisdn=$mobile&message=$sms&short_code=29008&correlator=&message_type=BULK&link_id=";
         
                     $profile_id = $user['profile_id'];
         
