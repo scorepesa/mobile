@@ -92,20 +92,27 @@
     <td class="left" colspan="3">
       <table width="100%">
         <tr>
+          <td class="dark-gray">Stake after Tax</td>
+          <td class="text-right bold"><?= round($stake/1.2,2); ?></td>
+        </tr>
+        <tr>
           <td class="dark-gray">Total Odds</td>
           <td class="text-right bold"><?= $totalOdds; ?></td>
         </tr>
         <tr>
+          <?php $winnings = (($totalOdds*($stake/1.2))<50000)?$totalOdds*($stake/1.2):50000; ?>
+          <?php $taxable = $winnings - ($stake/1.2); ?>
+          <?php $netWinnings = $winnings - ($taxable*0.2); ?>
           <td class="dark-gray">Possible Win</td>
-          <td class="text-right bold"><?= round($totalOdds*$stake); ?></td>
+          <td class="text-right bold"><?= round($winnings,2); ?></td>
         </tr>
         <tr>
           <td class="dark-gray">Withholding Tax (20%)</td>
-          <td class="text-right bold"><?= round($totalOdds*$stake*0.2); ?></td>
+          <td class="text-right bold"><?= round($taxable*0.2,2); ?></td>
         </tr>
         <tr>
           <td class="dark-gray">Net Possible Win</td>
-          <td class="text-right bold"><?= round($totalOdds*$stake -($totalOdds*$stake*0.2)); ?></td>
+          <td class="text-right bold"><?= round($netWinnings,2); ?></td>
         </tr>
       </table>
     </td>
