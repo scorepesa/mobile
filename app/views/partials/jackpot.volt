@@ -16,7 +16,7 @@
       <table class="highlights" width="100%">
         <tr>
           <td style="padding: 0;">
-{{ this.flashSession.output() }}
+          {{ this.flashSession.output() }}
             <!-- List matches -->
 
           <?php foreach($games as $day): ?>
@@ -90,7 +90,14 @@
                     ?>">
                     <table cellspacing="0" cellpadding="0">
                       <tr>
-                            <td class="">
+                            <td class="<?php echo $day['match_id']; ?> 
+                               <?php 
+                                 echo clean($day['match_id'] . $day['sub_type_id'] . $day['home_team']);
+                                     if ($theMatch['bet_pick'] == $day['home_team'] 
+                                         && $theMatch['sub_type_id'] == $day['sub_type_id']) {
+                                         echo ' picked';
+                                     }
+                                  ?> ">
                               <button href="javascript:;" class="" 
                               pos="<?= $day['pos']; ?>"
                               hometeam="<?php echo $day['home_team']; ?>" 
@@ -122,7 +129,12 @@
 
                       <table cellspacing="0" cellpadding="0">
                         <tr>
-                            <td class="">
+                            <td class="<?php echo $day['match_id']; ?> <?php
+                                echo clean($day['match_id'] . $day['sub_type_id'] . 'draw');
+                                if ($theMatch['bet_pick'] == 'draw' && $theMatch['sub_type_id'] == $day['sub_type_id']) {
+                                    echo ' picked';
+                                }
+                                ?> ">
                               <button href="javascript:;" class="" 
                               pos="<?= $day['pos']; ?>"
                               hometeam="<?php echo $day['home_team']; ?>" 
@@ -150,7 +162,12 @@
               <td class="border-td"></td>
               <!-- draw and over and under -->
               <td>
-                  <table class="draw-under-btn">
+                  <table class="draw-under-btn <?php echo $day['match_id']; ?> <?php
+                        echo clean($day['match_id'] . $day['sub_type_id'] . $day['away_team']);
+                        if ($theMatch['bet_pick'] == $day['away_team'] && $theMatch['sub_type_id'] == $day['sub_type_id']) {
+                            echo ' picked';
+                        }
+                        ?>">
                   <tr>
                   <td class="clubone <?php echo $day['match_id']; ?> <?php
                       echo clean($day['match_id'] . $day['sub_type_id'] . "X/O");
