@@ -82,7 +82,12 @@ class BetslipController extends ControllerBase
 
         $this->session->set("betslip", $betslip);
 
-        $bets = $this->betslip('prematch');
+        if($bet_type == 'prematch'){
+            $bets = $this->betslip('prematch');
+        }else{
+
+            $bets = $this->betslip('jackpot');
+        }
 
         $count = sizeof($bets);
 
