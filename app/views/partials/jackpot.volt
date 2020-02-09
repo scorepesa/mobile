@@ -7,7 +7,7 @@
   }
 ?>
 <table class="jp">
-  <th class="title" style="text-align:center">WELELEABET 7 GAMES KSH. 1,000,000 <br> 
+  <th class="title" style="text-align:center">SCOREPESA JACKPOT KSH. 1,000,000 <br> 
   <span class="meta">Closes on {{startTime}}</span>
   
   </th>
@@ -64,13 +64,13 @@
                   <table class="league">
                     <tr >
                       <td style="text-align: center;" class="meta">
-                        Home & Over/Under 2.5
+                        Home
                       </td>
                        <td style="text-align: center;" class="meta">
-                        Draw & Over/Under 2.5
+                        Draw
                       </td>
                        <td style="text-align: center;" class="meta">
-                        Away & Over/Under 2.5
+                        Away
                       </td>
                     </tr>
                   </table>
@@ -90,11 +90,25 @@
                     ?>">
                     <table cellspacing="0" cellpadding="0">
                       <tr>
-                            <td class=""><button href="javascript:;" class="" pos="<?= $day['pos']; ?>" hometeam="<?= $day['home_team']; ?>" oddtype="1x2 & total 2.5" bettype='jackpot' awayteam="<?php echo $day['away_team']; ?>" oddvalue="<?php echo $home_over; ?>" target="javascript:;" odd-key="1/O" parentmatchid="<?php echo $day['parent_match_id']; ?>" id="<?php echo $day['match_id']; ?>" custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . "1/O"); ?>" sub-type-id="37" special-value-value="2.5" 
-                             {%if jpactive %}
-                            onClick="addBet(this.id,this.getAttribute('sub-type-id'),this.getAttribute('odd-key'),this.getAttribute('custom'),this.getAttribute('special-value-value'),this.getAttribute('bettype'),this.getAttribute('hometeam'),this.getAttribute('awayteam'),this.getAttribute('oddvalue'),this.getAttribute('oddtype'),this.getAttribute('parentmatchid'),this.getAttribute('pos'))"
-                             {% endif %}>
-                              <span class="pick">Over</span><span class="odd"><?php echo $home_over; ?></span></button></td>
+                            <td class="">
+                              <button href="javascript:;" class="" 
+                              pos="<?= $day['pos']; ?>"
+                              hometeam="<?php echo $day['home_team']; ?>" 
+                              oddtype="1x2" 
+                              bettype='jackpot' 
+                              awayteam="<?php echo $day['away_team']; ?>" 
+                              oddvalue="<?php echo $home_odd; ?>" 
+                              target="javascript:;" 
+                              odd-key="<?php echo $day['home_team']; ?>" 
+                              parentmatchid="<?php echo $day['parent_match_id']; ?>" 
+                              id="<?php echo $day['match_id']; ?>" 
+                              custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . $day['home_team']); ?>" 
+                              value="<?php echo $day['sub_type_id']; ?>" 
+                              special-value-value="0" 
+                              onClick="addBet(this.id, this.value, this.getAttribute('odd-key'), this.getAttribute('custom'), this.getAttribute('special-value-value'), this.getAttribute('bettype'), this.getAttribute('hometeam'), this.getAttribute('awayteam'), this.getAttribute('oddvalue'), this.getAttribute('oddtype'), this.getAttribute('parentmatchid'),this.getAttribute('pos'))">
+                              <span class="pick">Home</span><span class="odd">
+                                <?php echo $home_odd; ?></span></button>
+                              </td>
                           </tr>
                         </table>
                     </td>
@@ -108,11 +122,24 @@
 
                       <table cellspacing="0" cellpadding="0">
                         <tr>
-                            <td class=""><button href="javascript:;" class="" pos="<?= $day['pos']; ?>" hometeam="<?= $day['home_team']; ?>" oddtype="1x2 & total 2.5" bettype='jackpot' awayteam="<?php echo $day['away_team']; ?>" oddvalue="<?php echo $home_under; ?>" target="javascript:;" odd-key="1/O" parentmatchid="<?php echo $day['parent_match_id']; ?>" id="<?php echo $day['match_id']; ?>" custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . "1/U"); ?>" sub-type-id="37" special-value-value="2.5" 
-                             {%if jpactive %}
-                            onClick="addBet(this.id,this.getAttribute('sub-type-id'),this.getAttribute('odd-key'),this.getAttribute('custom'),this.getAttribute('special-value-value'),this.getAttribute('bettype'),this.getAttribute('hometeam'),this.getAttribute('awayteam'),this.getAttribute('oddvalue'),this.getAttribute('oddtype'),this.getAttribute('parentmatchid'),this.getAttribute('pos'))"
-                             {% endif %}>
-                              <span class="pick">Under</span><span class="odd"><?php echo $home_under; ?></span></button></td>
+                            <td class="">
+                              <button href="javascript:;" class="" 
+                              pos="<?= $day['pos']; ?>"
+                              hometeam="<?php echo $day['home_team']; ?>" 
+                              oddtype="1x2" bettype='jackpot' 
+                              awayteam="<?php echo $day['away_team']; ?>" 
+                              oddvalue="<?php echo $neutral_odd; ?>" 
+                              custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . "draw"); ?>" 
+                              value="<?php echo $day['sub_type_id']; ?>" 
+                              odd-key="draw" 
+                              target="javascript:;" 
+                              parentmatchid="<?php echo $day['parent_match_id']; ?>" 
+                              id="<?php echo $day['match_id']; ?>" 
+                              special-value-value="0" 
+                              onClick="addBet(this.id, this.value, this.getAttribute('odd-key'), this.getAttribute('custom'), this.getAttribute('special-value-value'), this.getAttribute('bettype'), this.getAttribute('hometeam'), this.getAttribute('awayteam'), this.getAttribute('oddvalue'), this.getAttribute('oddtype'), this.getAttribute('parentmatchid'),this.getAttribute('pos'))">
+                              <span class="pick">Draw</span><span class="odd">
+                                <?php echo $neutral_odd; ?></span></button>
+                            </td>
                           </tr>
                         </table>
                     </td>
@@ -133,73 +160,27 @@
                     ?>">
                     <table cellspacing="0" cellpadding="0">
                       <tr>
-                            <td class=""><button href="javascript:;" class="" pos="<?= $day['pos']; ?>" hometeam="<?= $day['home_team']; ?>" oddtype="1x2 & total 2.5" bettype='jackpot' awayteam="<?php echo $day['away_team']; ?>" oddvalue="<?php echo $draw_over; ?>" target="javascript:;" odd-key="X/O" parentmatchid="<?php echo $day['parent_match_id']; ?>" id="<?php echo $day['match_id']; ?>" custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . "X/O"); ?>" sub-type-id="37" special-value-value="2.5" 
-                             {%if jpactive %}
-                            onClick="addBet(this.id,this.getAttribute('sub-type-id'),this.getAttribute('odd-key'),this.getAttribute('custom'),this.getAttribute('special-value-value'),this.getAttribute('bettype'),this.getAttribute('hometeam'),this.getAttribute('awayteam'),this.getAttribute('oddvalue'),this.getAttribute('oddtype'),this.getAttribute('parentmatchid'),this.getAttribute('pos'))"
-                             {% endif %}>
-                              <span class="pick">Over</span><span class="odd"><?php echo $draw_over; ?></span></button></td>
+                            <td class="">
+                              <button href="javascript:;" class="" 
+                              pos="<?= $day['pos']; ?>"
+                              hometeam="<?php echo $day['home_team']; ?>" 
+                              oddtype="1x2" bettype='jackpot' 
+                              awayteam="<?php echo $day['away_team']; ?>" 
+                              oddvalue="<?php echo $away_odd; ?>" 
+                              value="<?php echo $day['sub_type_id']; ?>" 
+                              custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . $day['away_team']); ?>"
+                              odd-key="<?php echo $day['away_team']; ?>" 
+                              target="javascript:;" 
+                              parentmatchid="<?php echo $day['parent_match_id']; ?>" 
+                              id="<?php echo $day['match_id']; ?>" 
+                              special-value-value="0"
+                              onClick="addBet(this.id, this.value, this.getAttribute('odd-key'), this.getAttribute('custom'), this.getAttribute('special-value-value'), this.getAttribute('bettype'), this.getAttribute('hometeam'), this.getAttribute('awayteam'), this.getAttribute('oddvalue'), this.getAttribute('oddtype'), this.getAttribute('parentmatchid'),this.getAttribute('pos'))">
+                              <span class="pick">AWAY</span><span class="odd">
+                                <?php echo $away_odd; ?></span></button>
+                            </td>
                           </tr>
                         </table>
                     </td>
-                    <td class="clubone <?php echo $day['match_id']; ?> <?php
-                        echo clean($day['match_id'] . $day['sub_type_id'] . "X/U");
-                        if ($theMatch['bet_pick'] == 'X/U' && $theMatch['sub_type_id'] == '37') {
-                            echo ' picked';
-                        } ?>">
-
-                      <table cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td class=""><button href="javascript:;" class="" pos="<?= $day['pos']; ?>" hometeam="<?= $day['home_team']; ?>" oddtype="1x2 & total 2.5" bettype='jackpot' awayteam="<?php echo $day['away_team']; ?>" oddvalue="<?php echo $draw_under; ?>" target="javascript:;" odd-key="X/U" parentmatchid="<?php echo $day['parent_match_id']; ?>" id="<?php echo $day['match_id']; ?>" custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . "X/U"); ?>" sub-type-id="37" special-value-value="2.5" 
-                             {%if jpactive %}
-                            onClick="addBet(this.id,this.getAttribute('sub-type-id'),this.getAttribute('odd-key'),this.getAttribute('custom'),this.getAttribute('special-value-value'),this.getAttribute('bettype'),this.getAttribute('hometeam'),this.getAttribute('awayteam'),this.getAttribute('oddvalue'),this.getAttribute('oddtype'),this.getAttribute('parentmatchid'),this.getAttribute('pos'))"
-                             {% endif %}>
-                              <span class="pick">Under</span><span class="odd"><?php echo $draw_under; ?></span></button></td>
-                          </tr>
-                        </table>
-                    </td>
-
-                  </tr>
-                </table> <!-- end draw and over and under btns -->
-              </td>
-              <td class="border-td"></td>
-              <!-- away draw and over -->
-              <td>
-                  <table class="draw-under-btn">
-                  <tr>
-                  <td class="clubone  <?php echo $day['match_id']; ?> <?php
-                    echo clean($day['match_id'] . $day['sub_type_id'] . "2/O");
-                    if ($theMatch['bet_pick'] == '2/O' && $theMatch['sub_type_id'] == '37') {
-                        echo ' picked';
-                    }
-                    ?>">
-                    <table cellspacing="0" cellpadding="0">
-                      <tr>
-                            <td class=""><button href="javascript:;" class="" pos="<?= $day['pos']; ?>" hometeam="<?= $day['home_team']; ?>" oddtype="1x2 & total 2.5" bettype='jackpot' awayteam="<?php echo $day['away_team']; ?>" oddvalue="<?php echo $away_over; ?>" target="javascript:;" odd-key="2/O" parentmatchid="<?php echo $day['parent_match_id']; ?>" id="<?php echo $day['match_id']; ?>" custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . "2/O"); ?>" sub-type-id="37" special-value-value="2.5" 
-                             {%if jpactive %}
-                            onClick="addBet(this.id,this.getAttribute('sub-type-id'),this.getAttribute('odd-key'),this.getAttribute('custom'),this.getAttribute('special-value-value'),this.getAttribute('bettype'),this.getAttribute('hometeam'),this.getAttribute('awayteam'),this.getAttribute('oddvalue'),this.getAttribute('oddtype'),this.getAttribute('parentmatchid'),this.getAttribute('pos'))"
-                             {% endif %}>
-                              <span class="pick">Over</span><span class="odd"><?php echo $away_over; ?></span></button></td>
-                          </tr>
-                        </table>
-                    </td>
-                    
-                    <td class="clubone <?php echo $day['match_id']; ?> <?php
-                      echo clean($day['match_id'] . $day['sub_type_id'] . "2/U");
-                      if ($theMatch['bet_pick'] == '2/U' && $theMatch['sub_type_id'] == '37') {
-                          echo ' picked';
-                      } ?>">
-
-                      <table cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td class=""><button href="javascript:;" class="" pos="<?= $day['pos']; ?>" hometeam="<?= $day['home_team']; ?>" oddtype="1x2 & total 2.5" bettype='jackpot' awayteam="<?php echo $day['away_team']; ?>" oddvalue="<?php echo $away_under; ?>" target="javascript:;" odd-key="2/U" parentmatchid="<?php echo $day['parent_match_id']; ?>" id="<?php echo $day['match_id']; ?>" custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . "2/U"); ?>" sub-type-id="37" special-value-value="2.5" 
-                             {%if jpactive %}
-                            onClick="addBet(this.id,this.getAttribute('sub-type-id'),this.getAttribute('odd-key'),this.getAttribute('custom'),this.getAttribute('special-value-value'),this.getAttribute('bettype'),this.getAttribute('hometeam'),this.getAttribute('awayteam'),this.getAttribute('oddvalue'),this.getAttribute('oddtype'),this.getAttribute('parentmatchid'),this.getAttribute('pos'))"
-                             {% endif %}>
-                              <span class="pick">Under</span><span class="odd"><?php echo $away_under; ?></span></button></td>
-                          </tr>
-                        </table>
-                    </td>
-
                   </tr>
                 </table> <!-- end draw and over and under btns -->
               </td>
@@ -224,8 +205,6 @@
              <input type="hidden" name="src" id="src" value="mobile" >
              <input type="hidden" name="jackpot_id" id="jackpot_id" value="{{jackpotID}}" >
  <div class="total-stake"><span class="met">Total Stake: </span><span class="stake-amt">KSH 50</span></div>
-
- 
 
 {% if session.get('auth') != null %}
 <button type="submit" id="place_bet_button" class="place" onclick="fbJackpot()">Place Bet</button>
