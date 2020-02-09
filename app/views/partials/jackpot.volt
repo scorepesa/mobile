@@ -201,9 +201,9 @@
 <div class="placebet">
 <?php echo $this->tag->form("betslip/betJackpot"); ?>
 <input type="hidden" id="user_id" name="user_id" value="{{session.get('auth')['id']}}">
-             <input type="hidden" name="jackpot_type" id="jackpot_type" value="12" >
-             <input type="hidden" name="src" id="src" value="mobile" >
-             <input type="hidden" name="jackpot_id" id="jackpot_id" value="{{jackpotID}}" >
+<input type="hidden" name="jackpot_type" id="jackpot_type" value="12" >
+<input type="hidden" name="src" id="src" value="mobile" >
+<input type="hidden" name="jackpot_id" id="jackpot_id" value="{{jackpotID}}" >
  <div class="total-stake"><span class="met">Total Stake: </span><span class="stake-amt">KSH 50</span></div>
 
 {% if session.get('auth') != null %}
