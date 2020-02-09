@@ -46,6 +46,7 @@ function addBet(value, sub_type_id, odd_key, custom, special_bet_value, bet_type
         $("." + custom).addClass('picked');
         if (bet_type === 'jackpot') {
             refreshSlip();
+            $(".slip-counter").html(data.total);
         } else if (bet_type === 'bingwafour') {
             refreshBingwaFour();
         } else {
