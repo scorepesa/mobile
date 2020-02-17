@@ -222,6 +222,7 @@
 <input type="hidden" name="src" id="src" value="mobile" >
 <input type="hidden" name="stake" id="stake" value="50" >
 <input type="hidden" name="total_odd" id="src" value="1" >
+<input type="hidden" name="bet_type" id="bet_type" value="jackpot" >
 <input type="hidden" name="jackpot_id" id="jackpot_id" value="{{jackpotID}}" >
  <div class="total-stake"><span class="met">Total Stake: </span><span class="stake-amt">KSH 50</span></div>
 
