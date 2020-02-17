@@ -4,7 +4,7 @@ class JackpotController extends ControllerBase
 {
     public function indexAction()
     {
-    	 $jackpotID = $this->rawQueries("SELECT jackpot_type,jackpot_event_id, status, total_games FROM jackpot_event ORDER BY 1 DESC LIMIT 1");
+    	 $jackpotID = $this->rawQueries("SELECT jackpot_type,jackpot_event_id,total_games FROM jackpot_event WHERE status = 'ACTIVE' ORDER BY 1 DESC LIMIT 1");
 
         $jpStatus = $jackpotID['0']['status'];
         $total_games = $jackpotID['0']['total_games'];
