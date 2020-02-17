@@ -166,7 +166,7 @@ class BetslipController extends ControllerBase
             if ($bet_amount < 50) {
                 if ($src == 'mobile') {
                     $this->flashSession->error($this->flashMessages('Bet amount should be at least KES. 50'));
-                    $this->response->redirect('betmobile');
+                    $this->response->redirect('betslip');
                     // Disable the view to avoid rendering
                     $this->view->disable();
                 } else {
@@ -287,7 +287,7 @@ class BetslipController extends ControllerBase
         $jackpot_id = $this->request->getPost('jackpot_id', 'int');
         $jackpot_type = $this->request->getPost('jackpot_type', 'int');
         $total_matches = $this->request->getPost('total_matches', 'int');
-        $bet_amount = $this->request->getPost('bet_amount', 'int');
+        $bet_amount = $this->request->getPost('stake', 'int');
         $total_odd = $this->request->getPost('total_odd', 'int');
         $possible_win = $bet_amount * $total_odd;
         $src = $this->request->getPost('src', 'string');
@@ -301,7 +301,7 @@ class BetslipController extends ControllerBase
         if (!$user_id || !$bet_amount) {
             if ($src == 'mobile') {
                 $this->flashSession->error($this->flashMessages('All fields are required'));
-                $this->response->redirect('betmobile');
+                $this->response->redirect('betslip');
                 $this->view->disable();
             } else {
                 $data = ["status_code" => 421, "message" => "All fields are required --------"];
@@ -313,7 +313,7 @@ class BetslipController extends ControllerBase
             if ($bet_amount < 50) {
                 if ($src == 'mobile') {
                     $this->flashSession->error($this->flashMessages('Bet amount should be at least Ksh. 50'));
-                    $this->response->redirect('betmobile');
+                    $this->response->redirect('betslip');
                     // Disable the view to avoid rendering
                     $this->view->disable();
                 } else {
