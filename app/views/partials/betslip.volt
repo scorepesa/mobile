@@ -57,7 +57,10 @@
                       </td>
                     </tr>
                     <tr class="type">
-                      <td class="dark-gray"><?php echo $bet['odd_type']; ?> (<?php echo $bet['odd_value']; ?>)</td>
+                      <td class="dark-gray">
+                        <?php if($bet['bet_type'] == 'prematch') { ?>
+                        <?php echo $bet['odd_type']; ?> (<?php echo $bet['odd_value']; ?>)</td>
+                        <?php } ?>
                     </tr>
                     <tr class="pick">
                       <td><?= $pick; ?> </td>
@@ -91,6 +94,7 @@
   <tr class="details">
     <td class="left" colspan="3">
       <table width="100%">
+        <?php if($bet['bet_type'] == 'prematch') { ?>
         <tr>
           <td class="dark-gray">Stake after Tax</td>
           <td class="text-right bold"><?= round($stake/1.2,2); ?></td>
@@ -114,6 +118,12 @@
           <td class="dark-gray">Net Possible Win</td>
           <td class="text-right bold"><?= round($netWinnings,2); ?></td>
         </tr>
+        <?php else { ?>
+        <tr>
+          <td class="dark-gray">Possible Win</td>
+          <td class="text-right bold">1,000,000.00</td>
+        </tr>
+        <?php } ?>
       </table>
     </td>
     <td class="right">
