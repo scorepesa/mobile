@@ -216,7 +216,7 @@
   </tr>
 </table>
 <div class="placebet">
-<?php echo $this->tag->form("betslip/betJackpot"); ?>
+<?php echo $this->tag->form("betslip/placebet"); ?>
 <input type="hidden" id="user_id" name="user_id" value="{{session.get('auth')['id']}}">
 <input type="hidden" name="jackpot_type" id="jackpot_type" value="12" >
 <input type="hidden" name="src" id="src" value="mobile" >
