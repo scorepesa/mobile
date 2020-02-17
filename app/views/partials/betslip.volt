@@ -95,7 +95,6 @@
   <tr class="details">
     <td class="left" colspan="3">
       <table width="100%">
-        <?php var_dump($bet_type); ?>
         <?php if($bet_type == 'jackpot') { ?>
         <tr>
           <td class="dark-gray">Possible Win</td>
@@ -140,6 +139,7 @@
           
           <tr>
             <td colspan="10">
+            <?php ($totalOdds == 0)?$totalOdds = 1:$totalOdds; ?>
             <?php echo $this->tag->form("betslip/placebet"); ?>
             <input type="hidden" name="stake" value="{{stake}}">
             <input type="hidden" name="bet_type" value="<?php echo $bet_type; ?>">

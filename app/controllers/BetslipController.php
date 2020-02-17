@@ -157,7 +157,7 @@ class BetslipController extends ControllerBase
         $response->setHeader("Content-Type", "application/json");
 
         if (!$user_id || !$bet_amount || !$total_odd || !$possible_win) {
-            $this->flashSession->error($this->flashError('all fields are required'));
+            $this->flashSession->error($this->flashError('All fields are required'));
             $this->response->redirect('betslip');
             // Disable the view to avoid rendering
             $this->view->disable();
