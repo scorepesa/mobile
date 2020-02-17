@@ -241,6 +241,24 @@ class BetslipController extends ControllerBase
 
 
                 if($bet_type == 'jackpot'){
+
+                    $jackpot_id = $this->request->getPost('jackpot_id', 'int');
+                    
+                    $bet = [
+                        "bet_string"     => 'sms',
+                        "app_name"       => "LITE",
+                        "possible_win"   => $possible_win,
+                        "profile_id"     => $user_id,
+                        "stake_amount"   => $bet_amount,
+                        "bet_total_odds" => $total_odd,
+                        "deviceID"       => "6489000GX",
+                        "endCustomerIP"  => $endCustomerIP,
+                        "channelID"      => $src,
+                        "jackpot_id"     => $jackpot_id,
+                        "slip"           => $slip,
+                        "account"        => $account,
+                        'msisdn'         => $mobile,
+                    ];
                     $placeB = $this->betJackpot($bet);
                 }else{
 
