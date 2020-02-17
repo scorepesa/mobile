@@ -190,6 +190,8 @@ class BetslipController extends ControllerBase
 
                 $slip = [];
 
+                $betslip = $this->array_msort($betslip, ['pos' => SORT_ASC]);
+
                 foreach ($betslip as $match) {
                     $parent_match_id = $match['parent_match_id'];
                     $bet_pick = $match['bet_pick'];
@@ -250,6 +252,7 @@ class BetslipController extends ControllerBase
                     if ($placeB['status_code'] == 201) {
                         $feedback = $placeB['message'];
                         $this->betslipUnset('prematch');
+                        $this->betslipUnset('jackpot');
                         $this->flashSession->success($this->flashSuccess($feedback));
                     } else {
                         $this->flashSession->error($this->flashError($feedback));
@@ -288,7 +291,8 @@ class BetslipController extends ControllerBase
             '5'  => 'correct',
             '12' => 'jackpot',
         ];
-        $url = "http://146.148.25.26:8008/free/jp";
+
+        $url = "http://35.187.20.191:8787/jp/bet";
 
         $bet_type = 'jackpot';
         $matches = $this->betslip('jackpot');
