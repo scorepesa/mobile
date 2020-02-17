@@ -95,6 +95,7 @@
   <tr class="details">
     <td class="left" colspan="3">
       <table width="100%">
+        <?php var_dump($betslip); ?>
         <?php if($bet_type == 'jackpot') { ?>
         <tr>
           <td class="dark-gray">Possible Win</td>
