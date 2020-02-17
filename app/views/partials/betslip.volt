@@ -8,6 +8,7 @@
   $matchCount = 0;
   $bonus = 0;
   $bonusOdds = 1;
+  $bet_type = 'prematch';
 ?>
 
 <?php foreach((array)$betslip as $bet): ?>
@@ -58,7 +59,8 @@
                     </tr>
                     <tr class="type">
                       <td class="dark-gray">
-                        <?php if($bet['bet_type'] == 'prematch') { ?>
+                        <?php $bet_type = $bet['bet_type']; ?>
+                        <?php if($bet_type == 'prematch') { ?>
                         <?php echo $bet['odd_type']; ?> (<?php echo $bet['odd_value']; ?>)</td>
                         <?php } ?>
                     </tr>
@@ -78,7 +80,6 @@
                     </form>
                     </tr>
                     
-                    
                   </table>
                 </td>
               </tr>
@@ -94,9 +95,7 @@
   <tr class="details">
     <td class="left" colspan="3">
       <table width="100%">
-        <?php $slip = (array)$betslip; ?>
-        <?php $bet_type = $slip[0]['bet_type']; ?>
-        <?php var_dump($betslip); ?>
+        <?php var_dump($bet_type); ?>
         <?php if($bet_type == 'jackpot') { ?>
         <tr>
           <td class="dark-gray">Possible Win</td>
