@@ -280,129 +280,151 @@ class BetslipController extends ControllerBase
     }
 
 
-    public function betJackpotAction()
-    {
+    public function betJackpotAction() {
 
+        $reference_id = $this->reference();
         $user_id = $this->request->getPost('user_id', 'int');
-        $src = $this->request->getPost('src', 'string');
-        $jackpot_type = $this->request->getPost('jackpot_type', 'int');
         $jackpot_id = $this->request->getPost('jackpot_id', 'int');
-        $jackpots = [
-            '5'  => 'correct',
-            '12' => 'jackpot',
-        ];
-
-        $url = "http://35.187.20.191:8787/jp/bet";
-
+        $jackpot_type = $this->request->getPost('jackpot_type', 'int');
+        $total_matches = $this->request->getPost('total_matches', 'int');
+        $bet_amount = $this->request->getPost('bet_amount', 'int');
+        $total_odd = $this->request->getPost('total_odd', 'int');
+        $possible_win = $bet_amount * $total_odd;
+        $src = $this->request->getPost('src', 'string');
+        $betslip = $this->session->get('betslip');
         $bet_type = 'jackpot';
-        $matches = $this->betslip('jackpot');
-
-        if ($jackpot_type == 5) {
-            $bet_type = 'bingwafour';
-            $matches = $this->betslip('bingwafour');
-        }
 
         $response = new Response();
         $response->setStatusCode(201, "OK");
         $response->setHeader("Content-Type", "application/json");
-
-        if (!$jackpot_id || !$jackpot_type || !$user_id) {
+        $src == 'mobile';
+        if (!$user_id || !$bet_amount) {
             if ($src == 'mobile') {
-                $this->flashSession->error($this->flashError('all fields are required'));
-                $this->response->redirect($jackpots[$jackpot_type]);
-                // Disable the view to avoid rendering
+                $this->flashSession->error($this->flashMessages('All fields are required'));
+                $this->response->redirect('betmobile');
                 $this->view->disable();
             } else {
-                $data = [
-                    "status_code" => "421",
-                    "message"     => "All fields are required",
-                ];
+                $data = ["status_code" => 421, "message" => "All fields are required --------"];
                 $response->setContent(json_encode($data));
-
                 return $response;
                 $this->view->disable();
             }
-
         } else {
-
-            $matches = $this->array_msort($matches, ['pos' => SORT_ASC]);
-
-            $totalMatch = sizeof($matches);
-
-            if ($totalMatch < $jackpot_type) {
+            if ($bet_amount < 50) {
                 if ($src == 'mobile') {
-                    $this->flashSession->error($this->flashError('You must select an outcome for all Jackpot Matches'));
-                    $this->response->redirect($jackpots[$jackpot_type]);
+                    $this->flashSession->error($this->flashMessages('Bet amount should be at least Ksh. 50'));
+                    $this->response->redirect('betmobile');
                     // Disable the view to avoid rendering
                     $this->view->disable();
                 } else {
-                    $data = [
-                        "status_code" => "421",
-                        "message"     => "You must select an outcome for all Jackpot Matches",
-                    ];
+                    $data = ["status_code" => 421, "message" => "Bet amount should be at least Ksh. 50"];
                     $response->setContent(json_encode($data));
-
                     return $response;
                     $this->view->disable();
                 }
             } else {
-                $mobile = $this->session->get('auth')['mobile'];
 
-                $message = '';
+                $matches = [];
 
-                foreach ($matches as $match) {
-                    if ($jackpot_type == 5) {
-                        $message = $message . "#" . $match['bet_pick'];
-                        $message = str_replace(":", "-", $message);
-                    } else {
-                        $message = $message . $match['bet_pick'];
+                $betslip = $this->session->get("betslip");
+
+                foreach ($betslip as $slip) {
+                    if ($slip['bet_type'] == $bet_type) {
+                        $matches[$slip['match_id']] = $slip;
                     }
                 }
+        
+                $matches = $this->array_msort($matches, ['pos' => SORT_ASC]);
 
-                if ($jackpot_type == 5) {
-                    $message = substr($message, 1);
-                    $url = "http://146.148.25.26:8008/jp/bet";
-                }
+                $totalMatch = sizeof($matches);
 
-                $bet = [
-                    "app_name"   => "LITE",
-                    "profile_id" => $user_id,
-                    'jackpot_id' => $jackpot_id,
-                    'msisdn'     => $mobile,
-                    'message'    => $message,
-                ];
-
-                $placeB = $this->betJackpot($bet, $url);
-
-                if ($placeB['status_code'] == 201) {
-                    $message = $placeB['message'];
-                    $sms = "msisdn=$mobile&message=$message&short_code=29090&correlator=&message_type=BULK&link_id=";
-                    $this->sendSMS($sms);
-                }
-
-                if ($src == 'mobile') {
-                    $feedback = $placeB['message'];
-                    if ($placeB['status_code'] == 201) {
-                        $feedback = $placeB['message'];
-                        $this->betslipUnset($bet_type);
-                        $this->flashSession->error($this->flashSuccess($feedback));
+                if ($totalMatch < $total_matches) {
+                    if ($src == 'mobile') {
+                        $this->flashSession->error($this->flashMessages('You must select an outcome for all Jackpot Matches'));
+                        $this->response->redirect('betmobile');
+                        // Disable the view to avoid rendering
+                        $this->view->disable();
                     } else {
-                        $this->flashSession->error($this->flashError($feedback));
+                        $data = [
+                            "status_code"  => "421",
+                            "message"      => "You must select an outcome for all Jackpot Matches",
+                            "jackpot_type" => $jackpot_type,
+                        ];
+                        $response->setContent(json_encode($data));
+
+                        return $response;
+                        $this->view->disable();
                     }
-
-                    $this->response->redirect($jackpots[$jackpot_type]);
-                    // Disable the view to avoid rendering
-                    $this->view->disable();
-
                 } else {
-                    $response->setContent(json_encode($placeB));
 
-                    return $response;
-                    $this->view->disable();
+                    $phql = "SELECT * from Profile where profile_id='$user_id' limit 1";
+                    $checkUser = $this->modelsManager->executeQuery($phql);
+
+                    $checkUser = $checkUser->toArray();
+
+                    $mobile = $checkUser['0']['msisdn'];
+
+                    $slip = [];
+
+                    foreach ($matches as $match) {
+                        $parent_match_id = $match['parent_match_id'];
+                        $bet_pick = $match['bet_pick'];
+                        $odd_value = $match['odd_value'];
+                        $sub_type_id = $match['sub_type_id'];
+                        $home_team = $match['home_team'];
+                        $away_team = $match['away_team'];
+                        $special_bet_value = $match['special_bet_value'];
+
+                        $thisMatch = ["sub_type_id" => $sub_type_id, "special_bet_value" => $special_bet_value, "pick_key" => $bet_pick, "odd_value" => $odd_value, "parent_match_id" => $parent_match_id];
+
+                        $slip[] = $thisMatch;
+                    }
+
+                    $bet = ["bet_string" => 'sms',
+                        "possible_win" => $possible_win,
+                        "profile_id" => $user_id,
+                        "jackpot_id" => $jackpot_id,
+                        "jackpot_type" => $jackpot_type,
+                        "stake_amount" => $bet_amount,
+                        "bet_total_odds" => $total_odd,
+                        "slip" => $slip];
+
+                        $placeB = $this->betJackpot($bet);
+
+                        if ($placeB['status_code'] == 201) {
+                            $message = $placeB['message'];
+                            $sms = "msisdn=$mobile&message=$message&short_code=29008&correlator=&message_type=BULK&link_id=";
+                            //$this->sendSMS($sms);
+                        }
+
+                    if ($src == 'mobile') {
+                        $feedback = $placeB['message'];
+                        if ($placeB['status_code'] == 201) {
+                            $feedback = $placeB['message'];
+                            $this->session->remove("betslip");
+                            $this->flashSession->success($this->flashSuccess($feedback));
+                        } else {
+                            $this->flashSession->error($this->flashMessages($feedback));
+                        }
+
+                        $this->response->redirect('betmobile');
+                        // Disable the view to avoid rendering
+                        $this->view->disable();
+                    } else {
+
+                        if ($placeB['status_code'] == 201) {
+                            $this->deleteReference();
+                            $this->session->remove("betslip");
+                            $this->reference();
+                        }
+
+                        $response->setContent(json_encode($placeB));
+                        return $response;
+                        $this->view->disable();
+                    }
                 }
             }
         }
-
     }
 
     private function array_msort($array, $cols)
