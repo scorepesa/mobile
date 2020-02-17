@@ -96,7 +96,12 @@
       <table width="100%">
         <?php $slip = (array)$betslip; ?>
         <?php $bet_type = $slip[0]['bet_type']; ?>
-        <?php if($bet_type == 'prematch') { ?>
+        <?php if($bet_type == 'jackpot') { ?>
+        <tr>
+          <td class="dark-gray">Possible Win</td>
+          <td class="text-right bold">1,000,000.00</td>
+        </tr>
+        <?php } else { ?>
         <tr>
           <td class="dark-gray">Stake after Tax</td>
           <td class="text-right bold"><?= round($stake/1.2,2); ?></td>
@@ -119,11 +124,6 @@
         <tr>
           <td class="dark-gray">Net Possible Win</td>
           <td class="text-right bold"><?= round($netWinnings,2); ?></td>
-        </tr>
-        <?php } else { ?>
-        <tr>
-          <td class="dark-gray">Possible Win</td>
-          <td class="text-right bold">1,000,000.00</td>
         </tr>
         <?php } ?>
       </table>
