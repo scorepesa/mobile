@@ -224,6 +224,7 @@
 <input type="hidden" name="total_odd" id="src" value="1" >
 <input type="hidden" name="bet_type" id="bet_type" value="jackpot" >
 <input type="hidden" name="jackpot_id" id="jackpot_id" value="{{jackpotID}}" >
+<input type="hidden" name="jackpot_type" id="jackpot_type" value="{{jackpotType}}" >
  <div class="total-stake"><span class="met">Total Stake: </span><span class="stake-amt">KSH 50</span></div>
 
 {% if session.get('auth') != null %}

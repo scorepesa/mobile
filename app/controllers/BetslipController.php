@@ -243,7 +243,8 @@ class BetslipController extends ControllerBase
                 if($bet_type == 'jackpot'){
 
                     $jackpot_id = $this->request->getPost('jackpot_id', 'int');
-                    
+                    $jackpot_type = $this->request->getPost('jackpot_type', 'int');
+
                     $bet = [
                         "bet_string"     => 'sms',
                         "app_name"       => "LITE",
@@ -255,6 +256,7 @@ class BetslipController extends ControllerBase
                         "endCustomerIP"  => $endCustomerIP,
                         "channelID"      => $src,
                         "jackpot_id"     => $jackpot_id,
+                        "jackpot_type"   => $jackpot_type,
                         "slip"           => $slip,
                         "account"        => $account,
                         'msisdn'         => $mobile,
