@@ -96,7 +96,7 @@
       <table width="100%">
         <?php $slip = (array)$betslip; ?>
         <?php $bet_type = $slip[0]['bet_type']; ?>
-        <?php var_dump($betslip[0]); ?>
+        <?php var_dump($betslip); ?>
         <?php if($bet_type == 'jackpot') { ?>
         <tr>
           <td class="dark-gray">Possible Win</td>
