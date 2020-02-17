@@ -49,6 +49,11 @@ class ControllerBase extends Controller
 
         $betslip = $this->betslip('prematch');
 
+        if(count($betslip) == 0){
+
+            $betslip = $this->betslip('jackpot');
+        }
+
         $slipCount = sizeof($betslip);
 
         $sportType = [
