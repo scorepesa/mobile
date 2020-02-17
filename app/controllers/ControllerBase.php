@@ -362,35 +362,26 @@ class ControllerBase extends Controller
      *
      * @return array
      */
-    protected function betJackpot($data, $url)
-    {
+    protected function betJackpot($data) {
+
+        $URL = "http://35.187.20.191:8787/jp/bet";
         $bet = json_encode($data);
-
-        $httpRequest = curl_init($url);
-
+        $httpRequest = curl_init($URL);
         curl_setopt($httpRequest, CURLOPT_NOBODY, true);
         curl_setopt($httpRequest, CURLOPT_POST, true);
         curl_setopt($httpRequest, CURLOPT_POSTFIELDS, $bet);
         curl_setopt($httpRequest, CURLOPT_TIMEOUT, 30); //timeout after 30 seconds
         curl_setopt($httpRequest, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($httpRequest, CURLOPT_HTTPHEADER, [
-            'Content-Type: application/json',
-            'Content-Length: ' . strlen($bet),
-        ]);
+        curl_setopt($httpRequest, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Content-Length: ' . strlen($bet)));
         curl_setopt($httpRequest, CURLOPT_HTTPAUTH, CURLAUTH_ANY);
-
         $results = curl_exec($httpRequest);
         $status_code = curl_getinfo($httpRequest, CURLINFO_HTTP_CODE); //get status code
         curl_close($httpRequest);
 
-        $response = [
-            "status_code" => $status_code,
-            "message"     => $results,
-        ];
-
+        $response = ["status_code" => $status_code, "message" => $results];
         return $response;
     }
-
+    
     /**
      * @param $transaction
      *

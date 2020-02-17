@@ -62,7 +62,7 @@
                         <?php echo $bet['odd_type']; ?> (<?php echo $bet['odd_value']; ?>)</td>
                         <?php } ?>
                     </tr>
-                    <tr class="pick">
+                    <tr class="pick" style="color: #30B36F;">
                       <td><?= $pick; ?> </td>
                     </tr>
                   </table>
@@ -142,6 +142,7 @@
             <td colspan="10">
             <?php echo $this->tag->form("betslip/placebet"); ?>
             <input type="hidden" name="stake" value="{{stake}}">
+            <input type="hidden" name="bet_type" value="<?php echo $bet_type; ?>">
             <input type="hidden" name="src" value="mobile">
             <input type="hidden" id="user_id" name="user_id" value="{{session.get('auth')['id']}}">
             <input type="hidden" id="total_odd_m" name="total_odd" value="<?php echo $totalOdds; ?>">

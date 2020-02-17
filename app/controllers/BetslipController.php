@@ -146,6 +146,7 @@ class BetslipController extends ControllerBase
         $betslip = $this->session->get('betslip');
         $endCustomerIP = $this->getClientIP();
         $account = $this->request->getPost('account', 'int', 1);
+        $bet_type = $this->request->getPost('bet_type', 'string') ?: 'prematch';
 
         if ($account !== 1) {
             $account = 0;
@@ -236,7 +237,13 @@ class BetslipController extends ControllerBase
                     'msisdn'         => $mobile,
                 ];
 
-                $placeB = $this->bet($bet);
+
+                if($bet_type == 'jackpot'){
+                    $placeB = $this->betJackpot($bet);
+                }else{
+
+                    $placeB = $this->bet($bet);
+                }
 
                 if ($src == 'mobile') {
                     $feedback = $placeB['message'];
