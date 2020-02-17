@@ -357,12 +357,11 @@ class BetslipController extends ControllerBase
                     }
                 } else {
 
-                    $phql = "SELECT * from Profile where profile_id='$user_id' limit 1";
-                    $checkUser = $this->modelsManager->executeQuery($phql);
+                     $checkUser = $this->rawSelect("SELECT * from profile where profile_id='$user_id' limit 1");
 
-                    $checkUser = $checkUser->toArray();
+                    $checkUser = $checkUser['0'];
 
-                    $mobile = $checkUser['0']['msisdn'];
+                    $mobile = $checkUser['msisdn'];
 
                     $slip = [];
 

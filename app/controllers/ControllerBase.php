@@ -381,7 +381,7 @@ class ControllerBase extends Controller
         $response = ["status_code" => $status_code, "message" => $results];
         return $response;
     }
-    
+
     /**
      * @param $transaction
      *
@@ -680,6 +680,34 @@ class ControllerBase extends Controller
     protected function formatMessage($message)
     {
         return preg_replace('/(KES\s+)?[+-]?[0-9]{1,3}(?:,?[0-9]{3})(\.[0-9]{2})?/', '<b>$0</b>', $message);
+    }
+
+
+    protected function reference() {
+
+        if (!$this->cookies->has('referenceID')) {
+
+            $crypt = new Crypt();
+
+            $key = 'FbxH8j7SPeeVDE7i';
+            $text = $_SERVER['HTTP_USER_AGENT'] . time() . uniqid();
+
+            $key = $crypt->encryptBase64($text, $key);
+
+            $this->cookies->set('referenceID', $key, time() + 15 * 86400);
+        }
+
+        $referenceID = $this->cookies->get('referenceID');
+
+        $referenceID = $referenceID->getValue();
+
+        return $referenceID;
+    }
+
+
+    protected function deleteReference() {
+
+        $this->cookies->set('referenceID');
     }
 
 
