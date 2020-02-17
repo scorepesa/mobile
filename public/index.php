@@ -37,7 +37,7 @@ try {
     echo $application->handle()->getContent();
 } catch (Exception $e) {
 	#echo $e->getMessage() . '<br>';
-   # echo '<pre>' . $e->getTraceAsString() . '</pre>';
+   	#echo '<pre>' . $e->getTraceAsString() . '</pre>';
     echo "<head><title>Page Not Found - scorepesa.co.ke</title></head><body style='background-color: #030928;background:url(img/error-cover.jpg)'><link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'><div style='
     max-width: 600px;
     display: block;
