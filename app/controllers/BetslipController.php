@@ -8,8 +8,19 @@ class BetslipController extends ControllerBase
 {
     public function IndexAction()
     {
+
+        $jackpot = $this->rawQueries("SELECT jackpot_type,jackpot_event_id FROM
+         jackpot_event WHERE status = 'ACTIVE' ORDER BY 1 DESC LIMIT 1");
+
+        $jackpotID = $jackpot['0']['jackpot_event_id'];
+        $jackpotType = $jackpot['0']['jackpot_type'];
+
         $stake = $this->session->get('stake') ?: 50;
-        $this->view->setVars(['stake' => $stake]);
+        $this->view->setVars([
+            'stake' => $stake,
+            'jackpotID'=>$jackpotID, 
+            'jackpotType'=>$jackpotType
+        ]);
     }
 
     public function stakeAction()

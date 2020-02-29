@@ -87,7 +87,7 @@
           </td>
         </tr>
       </table>
-  <?php endforeach; ?>
+    <?php endforeach; ?>
 
     </td>
   </tr>
@@ -146,6 +146,10 @@
             <input type="hidden" name="src" value="mobile">
             <input type="hidden" id="user_id" name="user_id" value="{{session.get('auth')['id']}}">
             <input type="hidden" id="total_odd_m" name="total_odd" value="<?php echo $totalOdds; ?>">
+            <?php if($bet_type == 'jackpot') { ?>
+            <input type="hidden" name="jackpot_id" id="jackpot_id" value="{{jackpotID}}" >
+            <input type="hidden" name="jackpot_type" id="jackpot_type" value="{{jackpotType}}" >
+            <?php } ?>
             {% if session.get('auth') != null %}
             <button type="submit" class="place" onclick="fbPurchase()">Place Bet</button>
             {% else %}
