@@ -23,17 +23,11 @@
 
           <?php
           $theMatch = $theBetslip[$day['match_id']];
-          $odds = $day['ht_ft'];
-          $odds = explode(',', $odds);
-
-          $home_over = $odds['0'];
-          $home_under = $odds['1'];
-
-          $draw_over = $odds['2'];
-          $draw_under = $odds['3'];
-
-          $away_over = $odds['4'];
-          $away_under = $odds['5'];
+          $odds = $day['threeway'];
+          $odds = explode(',',$odds);
+          $home_odd = $odds['0'];
+          $neutral_odd = $odds['2'];
+          $away_odd = $odds['1'];
           ?>
             <table class="highlights--item" width="100%" cellpadding="0" cellspacing="0">
               
@@ -98,7 +92,8 @@
                                          echo ' picked';
                                      }
                                   ?> ">
-                              <button href="javascript:;" class="" 
+                              <button href="javascript:;" 
+                              class="" 
                               pos="<?= $day['pos']; ?>"
                               hometeam="<?php echo $day['home_team']; ?>" 
                               oddtype="1x2" 
@@ -119,46 +114,47 @@
                           </tr>
                         </table>
                     </td>
-                    
-                    <td class="clubone <?php echo $day['match_id']; ?>
-                      <?php
-                          echo clean($day['match_id'] . $day['sub_type_id'] . '1/U');
-                          if ($theMatch['bet_pick'] == '1/U' && $theMatch['sub_type_id'] == '37') {
-                              echo ' picked';
-                          } ?>">
+                    </tr>
+                  </table>
+                </td>
+                <td class="border-td"></td>
 
-                      <table cellspacing="0" cellpadding="0">
-                        <tr>
-                            <td class="<?php echo $day['match_id']; ?> <?php
-                                echo clean($day['match_id'] . $day['sub_type_id'] . 'draw');
-                                if ($theMatch['bet_pick'] == 'draw' && $theMatch['sub_type_id'] == $day['sub_type_id']) {
-                                    echo ' picked';
-                                }
-                                ?> ">
-                              <button href="javascript:;" class="" 
-                              pos="<?= $day['pos']; ?>"
-                              hometeam="<?php echo $day['home_team']; ?>" 
-                              oddtype="1x2" bettype='jackpot' 
-                              awayteam="<?php echo $day['away_team']; ?>" 
-                              oddvalue="<?php echo $neutral_odd; ?>" 
-                              custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . "draw"); ?>" 
-                              value="<?php echo $day['sub_type_id']; ?>" 
-                              odd-key="draw" 
-                              target="javascript:;" 
-                              parentmatchid="<?php echo $day['parent_match_id']; ?>" 
-                              id="<?php echo $day['match_id']; ?>" 
-                              special-value-value="0" 
-                              onClick="addBet(this.id, this.value, this.getAttribute('odd-key'), this.getAttribute('custom'), this.getAttribute('special-value-value'), this.getAttribute('bettype'), this.getAttribute('hometeam'), this.getAttribute('awayteam'), this.getAttribute('oddvalue'), this.getAttribute('oddtype'), this.getAttribute('parentmatchid'),this.getAttribute('pos'))">
-                              <span class="pick">X</span><span class="odd">
-                                <?php echo $neutral_odd; ?></span></button>
-                            </td>
-                          </tr>
-                        </table>
-                    </td>
+                <td class="clubone <?php echo $day['match_id']; ?>
+                  <?php
+                      echo clean($day['match_id'] . $day['sub_type_id'] . '1/U');
+                      if ($theMatch['bet_pick'] == '1/U' && $theMatch['sub_type_id'] == '37') {
+                          echo ' picked';
+                      } ?>">
 
-                  </tr>
-                </table> <!-- over under btn -->
-              </td>
+                  <table cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td class="<?php echo $day['match_id']; ?> <?php
+                            echo clean($day['match_id'] . $day['sub_type_id'] . 'draw');
+                            if ($theMatch['bet_pick'] == 'draw' && $theMatch['sub_type_id'] == $day['sub_type_id']) {
+                                echo ' picked';
+                            }
+                            ?> ">
+                          <button href="javascript:;" class="" 
+                          pos="<?= $day['pos']; ?>"
+                          hometeam="<?php echo $day['home_team']; ?>" 
+                          oddtype="1x2" bettype='jackpot' 
+                          awayteam="<?php echo $day['away_team']; ?>" 
+                          oddvalue="<?php echo $neutral_odd; ?>" 
+                          custom="<?php echo clean($day['match_id'] . $day['sub_type_id'] . "draw"); ?>" 
+                          value="<?php echo $day['sub_type_id']; ?>" 
+                          odd-key="draw" 
+                          target="javascript:;" 
+                          parentmatchid="<?php echo $day['parent_match_id']; ?>" 
+                          id="<?php echo $day['match_id']; ?>" 
+                          special-value-value="0" 
+                          onClick="addBet(this.id, this.value, this.getAttribute('odd-key'), this.getAttribute('custom'), this.getAttribute('special-value-value'), this.getAttribute('bettype'), this.getAttribute('hometeam'), this.getAttribute('awayteam'), this.getAttribute('oddvalue'), this.getAttribute('oddtype'), this.getAttribute('parentmatchid'),this.getAttribute('pos'))">
+                          <span class="pick">X</span><span class="odd">
+                            <?php echo $neutral_odd; ?></span></button>
+                        </td>
+                      </tr>
+                    </table>
+                </td>
+
               <td class="border-td"></td>
               <!-- draw and over and under -->
               <td>
