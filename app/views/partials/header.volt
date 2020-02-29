@@ -18,9 +18,10 @@
         <tr>
           <td ><a class="<?= (@$men == 'home') ? 'selected': ''; ?>" href="{{ url('') }}"><?php echo $t->_('Home'); ?></a></td>
           <td><a class="<?= (@$men == 'football') ? 'selected': ''; ?>" href="{{ url('football') }}"><?php echo $t->_('Football'); ?></a></td>
-          <td><a class="<?= (@$men == 'sports') ? 'selected': ''; ?>" href="{{ url('sports') }}"><?php echo $t->_('Sports'); ?></a></td>
-          {#<td><a class="<?= (@$men == 'jackpot') ? 'selected': ''; ?>" href="{{ url('jackpot') }}"><?php echo $t->_('jackpot'); ?></a></td>#}
-          <td><a class="<?= (@$men == 'jackpot') ? 'selected': ''; ?>" href="{{ url('live') }}">Live</a></td>
+          <td><a class="<?= (@$men == 'sports') ? 'selected': ''; ?>" href="{{ url('sports') }}">
+            <?php echo $t->_('Sports'); ?></a></td>
+          <td><a class="<?= (@$men == 'jackpot') ? 'selected': ''; ?>" href="{{ url('jackpot') }}"><?php echo $t->_('jackpot'); ?></a></td>
+          {#<td><a class="<?= (@$men == 'live') ? 'selected': ''; ?>" href="{{ url('live') }}">Live</a></td>#}
            {% if session.get('auth')== null %}
             <td><a class="<?= (@$men == 'login') ? 'selected': ''; ?>" href="{{ url('login') }}"><?php echo $t->_('login'); ?></a></td>
             <td><a class="<?= (@$men == 'register') ? 'selected': ''; ?>" href="{{ url('signup') }}"><?php echo $t->_('register'); ?></a></td>
