@@ -482,7 +482,7 @@ class ControllerBase extends Controller
     protected function topup($data)
     {
 
-        $URL = "http://35.198.157.196:1580/kibeti";
+        $URL = "http://35.198.157.196:1580/mpesa/deposit";
 
         $httpRequest = curl_init($URL);
         curl_setopt($httpRequest, CURLOPT_NOBODY, true);
